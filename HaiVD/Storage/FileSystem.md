@@ -8,7 +8,7 @@ Các hệ thống file trong windows gồm 2 hệ thống chính là FAt và NTF
 - FAT16: Với HĐH MS-DOS, hệ thống tập tin FAT (FAT16 – để phân biệt với FAT32) được công bố vào năm 1981 đưa ra một cách thức mới về việc tổ chức và quản lý tập tin trên đĩa cứng, đĩa mềm. Tuy nhiên, khi dung lượng đĩa cứng ngày càng tăng nhanh, FAT16 đã bộc lộ nhiều hạn chế. Với không gian địa chỉ 16 bit, FAT16 chỉ hỗ trợ đến 65.536 liên cung (clusters) trên một partition, gây ra sự lãng phí dung lượng đáng kể (đến 50% dung lượng đối với những ổ đĩa cứng trên 2 GB).
 - FAT32: được giới thiệu trong phiên bản Windows 95 Service Pack 2 (OSR 2), được xem là phiên bản mở rộng của FAT16. Do sử dụng không gian địa chỉ 32 bit nên FAT32 hỗ trợ nhiều cluster trên một partition hơn, do vậy không gian đĩa cứng được tận dụng nhiều hơn. Ngoài ra với khả năng hỗ trợ kích thước của phân vùng từ 2GB lên 2TB và chiều dài tối đa của tên tập tin được mở rộng đến 255 ký tự đã làm cho FAT16 nhanh chóng bị lãng quên. Tuy nhiên, nhược điểm của FAT32 là tính bảo mật và khả năng chịu lỗi (Fault Tolerance) không cao.
 
-![fs](/images/fat.png)
+![fs](/HaiVD/Storage/images/fat.png)
 
 - NTFS (New Technology File System): được giới thiệu cùng với phiên bản Windows NT đầu tiên (phiên bản này cũng hỗ trợ FAT32). Với không gian địa chỉ 64 bit, khả năng thay đổi kích thước của cluster độc lập với dung lượng đĩa cứng, NTFS hầu như đã loại trừ được những hạn chế về số cluster, kích thước tối đa của tập tin trên một phân vùng đĩa cứng.
 - NTFS sử dụng bảng quản lý tập tin MFT (Master File Table) thay cho bảng FAT quen thuộc nhằm tăng cường khả năng lưu trữ, tính bảo mật cho tập tin và thư mục, khả năng mã hóa dữ liệu đến từng tập tin. Ngoài ra, NTFS có khả năng chịu lỗi cao, cho phép người dùng đóng một ứng dụng “chết” (not responding) mà không làm ảnh hưởng đến những ứng dụng khác. Tuy nhiên, NTFS lại không thích hợp với những ổ đĩa có dung lượng thấp (dưới 400 MB) và không sử dụng được trên đĩa mềm.
@@ -30,7 +30,7 @@ Filesystem là 1 phương thức để lưu trữ dữ liệu bằng cách cung 
 
 **Journaling**
 
-![fs](/images/journal.jpg)
+![fs](/HaiVD/Storage/images/journal.jpg)
 
 - Journaling chỉ được sử dụng khi dữ liệu ghi lên ổ cứng và đóng vai trò như những đục lỗ để ghi nhận thông tin vào phân vùng. Đồng thời , nó cũng khắc phục vấn đề xảy ra khi ổ cứng gặp lỗi trong quá trình này, nếu không có journal thì hệ điều hành sẽ không thể biết được file dữ liệu có được ghi đầy đủ tới ổ cứng hay không.
 - Journal hoạt động nôm na như sau : trước tiên file sẽ được ghi vào journal , đẩy vào bên trong lớp quản lý dữ liệu, sau đó journal ssex ghi file đó vào phân vùng ổ cứng khi đã sẵn sang.Và khi thành công, file sẽ được xóa bỏ khỏi journal , đẩy ngược ra bên ngoài và quá trình hoàn tất. Nếu xảy ra lỗi khi thực hiện thì file hệ thống có thể kiểm tra lại journal và tất cả các thao tác chưa được hoàn tất, đông thời ghi nhớ lại đúng vị trí xảy ra lỗi đó .
@@ -51,7 +51,7 @@ Journal có 3 chế độ : journal, writeback và odered .
 
 Đây là bảng so sánh các File system
 
-![fs](/images/ss.png)
+![fs](/HaiVD/Storage/images/ss.png)
 
 
 **Các khái niệm cơ bản trong Storage**
