@@ -60,10 +60,36 @@ Cách tính IOPS và số lượng ổ cứng :
 
 **Latency - Thông số quan trọng nhất trong hệ thống lưu trữ**
 
-![oc](/images/latency.png)
+![oc](/HaiVD/Storage/images/latency.png)
 
 - Latency là khái niệm về tốc độ xử lý một request I/O của hệ thống. Khái niệm này rất quan trọng bởi vì một hệ thống lưu trữ mặc dù chỉ có 1000 IOPS với Latency 10ms , vẫn có thể tốt hơn 1 hệ thống 5000 IOPS nhưng Latency 50ms.Đặc biệt là đối với các ứng dụng nhạy cảm như Database.
 - Khi một ổ cứng tăng IOPS thì tốn nhiều Latency hơn .
 
 
-##
+## Cache
+- Cache là bộ nhớ đệm chứa dữ liệu, các dữ liệu được nằm chờ yêu cầu từ ứng dụng hoặc phần cứng. Dữ liệu được chứa trong cache có thể là kết quả của tính toán trước đó, hoặc là sự trùng lặp dữ liệu ở một nơi khác.
+- Phần cứng cài đặt cache nư một nơi chứa dữ liệu tạm thời để có thể sử dụng lại. Vy xử lý  và ổ đĩa cứng HDD thường xuyên sử dụng cache.Cache gồm nhiều thanh ghi, mỗi thanh ghi chứa một bit để đánh dấu là đang lưu dữ liệu từ bộ nhớ hoặc chưa đươc sử dụng, 1 nhãn (tag) để kiểm tra xem nó có phải là dữ liệu ứng với bộ nhớ hay không và 1 vùng để lưu trữ dữ liệu giống với bộ nhớ.
+- Khi cache client cần truy cập đến dữ liệu ở bộ nhớ nó sẽ kiểm tra cache. Nếu một thanh ghi có nhãn tương ứng với dữ liệu mong muốn thì cache client sẽ sử dụng dữ liệu trên thanh ghi đó. Tình huống này được gọi là cache-hit.Ngược lại nếu không tìm thấy trên thanh ghi tương ứng, cache-miss xảy ra. Lúc này CPU sẽ truy cập vào bộ nhớ , lấy dữ liệu cần truy cập, đồng thời lưu dữ liệu ấy vào một thanh ghi nào đó.
+- Trong khi cache miss, CPU sẽ loại bỏ 1 số thanh ghi để dọn chỗ cho dữ liệu không nằm trong cache, Việc bỏ thanh ghi phải tuân thủ các quy định về thay thế, thông dụng nhất là "least recently use" tức là loại bỏ những cache ít sử dụng nhất.
+
+**Nguyên tắc ghi cache**
+
+Khi CPU ghi dữ liệu vào cache, cần phải có một số quy tắc khi lưu dữ liệu vào bộ nhớ.Có 2 cách tiếp cận :
+
+- Write throught : ghi ngay lập tức dữ liệu lên cả cache và bộ nhớ DRAM
+- Write-back : ghi cho cache trước, việc ghi lên bộ nhớ bị trì hoãn đến khi có dữ liệu mới cần đặt lên vùng lưu trữ đó.
+
+- Một Write-back cache được cài đặt khá phức tạp. Nó đánh dấu nhưng thanh ghi có dữ liệu thay đổi , đánh dấu chúng là ghi đè "dirty" , khi thanh ghi bị thay thế, dữ liệu trên ( được đánh dấu) sẽ được ghi vào bộ nhớ . Do đó , khi read-miss trên write-back cache, mất 2 lần truy cập, một là để ghi dữ liệu bị thay đổi vào bộ nhớ, hay là lấy dữ liệu cần dùng ghi lên cache.
+
+ Khi write-miss (cache-miss) xảy ra có 2 cách xử lý :
+- Write allocate : dữ liệu sẽ được ghi lên cache, một thanh ghi sẽ bị thay thế. Cách này tương tự như read-miss.
+- No-write allocate : dữ liệu sẽ được ghi vào bộ nhớ nhưng không ghi đè lên cache
+
+Cả write-through và write-back đều sử dụng 2 cách trên khi write-miss , nhưng bổ biến chúng đươc ứng với từng cách :
+- Write-back cache sử dụng write allocate giúp ghi đè dữ liệu lên cache hiệu quả hơn.
+
+![oc](/images/cache2.png)
+
+- Write-through cache sử dụng no-write allocate và việc ghi dữ liệu không được lưu trữ trong cahe không có hiệu quả.
+
+![oc](/images/cache.png)
