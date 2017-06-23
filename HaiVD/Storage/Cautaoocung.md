@@ -88,8 +88,8 @@ Khi CPU ghi dữ liệu vào cache, cần phải có một số quy tắc khi l�
 Cả write-through và write-back đều sử dụng 2 cách trên khi write-miss , nhưng bổ biến chúng đươc ứng với từng cách :
 - Write-back cache sử dụng write allocate giúp ghi đè dữ liệu lên cache hiệu quả hơn.
 
-![oc](/images/cache2.png)
+![oc](/HaiVD/Storage/images/cache2.png)
 
 - Write-through cache sử dụng no-write allocate và việc ghi dữ liệu không được lưu trữ trong cahe không có hiệu quả.
 
-![oc](/images/cache.png)
+![oc](/HaiVD/Storage/images/cache.png)
