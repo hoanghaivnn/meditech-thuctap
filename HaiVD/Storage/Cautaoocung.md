@@ -50,7 +50,7 @@ Hiểu nôm na
 Ba tham số này, đặc biệt là 2 tham số IOPS và latency phản ánh chất lượng phục vụ của bộ nhớ nhưng không phải lúc nào 2 tham số này cũng theo chiều cùng tốt hoặc cùng xấu. Có thể IOPS cao nưng Latency lại thấp, cũng có thể IOPS thấp nhưng Latency lại cao,hoặc cũng có thể cả 2 đều cao và cả 2 đều thấp.
 
 **IOPS**
-- Là đơn vị đo lường thowngf được sử dụng cho các thiết bị lưu trữ như HDD,SSD hoặc SAN - cho biết lượng tác vụ đọc và viết được hoàn thành trong một giây.Số IOPS được các nhà sản xuất công khai và không liên quan gì đến ứng dụng đo lường hiệu năng.
+- Là đơn vị đo lường thường được sử dụng cho các thiết bị lưu trữ như HDD,SSD hoặc SAN - cho biết lượng tác vụ đọc và viết được hoàn thành trong một giây.Số IOPS được các nhà sản xuất công khai và không liên quan gì đến ứng dụng đo lường hiệu năng.
 
 
 Cách tính IOPS và số lượng ổ cứng :
