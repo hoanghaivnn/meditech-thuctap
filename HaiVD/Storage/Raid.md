@@ -11,7 +11,7 @@
 ### [2.6 RAID 4](#26)
 ### [2.7 RAID 5](#27)
 ### [2.8 RAID 6](#28)
-##[III. Những điều cần thiết khi xây dựng RAID](#vd)
+## [III. Những điều cần thiết khi xây dựng RAID](#vd)
 
 
 <a name=vd></a>
