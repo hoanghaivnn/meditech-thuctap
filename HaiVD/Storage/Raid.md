@@ -115,6 +115,7 @@
 
 
 <a name=vd></a>
+
 ## III. Những điều cần thiết khi xây dựng RAID
 - Để chạy được RAID, bạn cần tối thiểu một card điều khiển và hai ổ đĩa cứng giống nhau. Đĩa cứng có thể ở bất cứ chuẩn nào, từ ATA, Serial ATA hay SCSI, tốt nhất chúng nên hoàn toàn giống nhau vì một nguyên tắc đơn giản là khi hoạt động ở chế độ đồng bộ như RAID, hiệu năng chung của cả hệ thống sẽ bị kéo xuống theo ổ thấp nhất nếu có. Ví dụ khi bạn bắt ổ 160GB chạy RAID với ổ 40GB (bất kể 0 hay 1) thì coi như bạn đã lãng phí 120GB vô ích vì hệ thống điều khiển chỉ coi chúng là một cặp hai ổ cứng 40GB mà thôi (ngoại trừ trường hợp JBOD như đã đề cập). Yếu tố quyết định tới số lượng ổ đĩa chính là kiểu RAID mà bạn định chạy. Chuẩn giao tiếp không quan trọng lắm, đặc biệt là giữa SATA và ATA. Một số BMC đời mới cho phép chạy RAID theo kiểu trộn lẫn cả hai giao tiếp này với nhau. Điển hình như MSI K8N Neo2 Platinum hay dòng DFI Lanparty NForce4.
 - Bộ điều khiển RAID (RAID Controller) là nơi tập trung các cáp dữ liệu nối các đĩa cứng trong hệ thống RAID và nó xử lý toàn bộ dữ liệu đi qua đó. Bộ điều khiển này có nhiều dạng khác nhau, từ card tách rời cho dến chip tích hợp trên BMC.
