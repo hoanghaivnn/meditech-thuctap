@@ -61,3 +61,11 @@ Journal có 3 chế độ : journal, writeback và odered .
 Có 2 loại định dạng ổ đĩa : MBR(Master Boot Record) và GPT(GUID Partition Table).
 - MBR: Là 1 hệ thống phân vùng truyền thống, tuy nhiên có nhiều hạn chế. Nó không thể sử dụng cho đĩa có dung lượng lớn hơn 2TB, nó chỉ có duy nhất 4 phân vùng chính bởi vậy phân vùng thứ 4 thường được sử dụng để làm extend partition, trong đó logical partition có thể được tạo ra.
 - GPT:Là 1 kĩ thuật phân vùng mới, nó đã khắc phục hiệu quả những hạn chế của MBR. Hệ thống sử dụng GPT có thể có nhiều hơn những phân vùng trên 1 ổ đĩa. Hơn nữa, GPT không giới hạn kích thước đĩa và bảng partition table có sẵn tại multiple location nhằm chống lại sự cố hỏng hóc. Trong nhiều trường hợp, GPT là lựa chọn tốt hơn so với MBR.
+
+**RAID**
+ - RAID (Redudant Arrays of Inexpensive Disk) là hình thức ghép nhiều ổ đĩa cứng vật lý thành một hệ thống ổ đĩa cứng có chứ năng gia tăng tốc độ đọc/ghi dữ liệu nhằm tăng thêm sự an toàn của dữ liệu chứa trên hệ thống đĩa hoặc kết hợp cả 2 yếu tố trên.
+ - RAID được phân loại thành nhiều kiểu như : RAID 0, RAID 1, RAID 3, RAID 4 , RAID 5 ,RAID 10,...
+
+ RAID 0
+
+ ![fs]()
