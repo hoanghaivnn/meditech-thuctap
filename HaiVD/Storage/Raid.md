@@ -141,7 +141,7 @@
 - LVM là một công cụ phần mềm để quản lý một lượng lớn các thiết bị lưu trữ làm cho các thiết bị lưu trữ được tổng hợp dưới dạng một kho lưu trữ có thể quản lý được.
 - LVM là một phương pháp quản lý DISK cho phép chúng ta tạo ra, mở rộng,giảm ,xóa hoặc thay đổi các nhóm logic.
 
-< a name=tl></a>
+<a name=tl></a>
 ## V. Tài liệu tham khảo
 - http://www.athlsolutions.com/web/ho-tro/kien-thuc-co-ban/raid-la-gi-tim-hieu-ve-raid
 - https://www.quora.com/What-is-the-difference-between-LVM-and-RAID
