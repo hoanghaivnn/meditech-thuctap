@@ -12,6 +12,8 @@
 ### [2.7 RAID 5](#27)
 ### [2.8 RAID 6](#28)
 ## [III. Những điều cần thiết khi xây dựng RAID](#vd)
+## [IV. Phân biệt RAID và LVM](#pb)
+
 
 
 <a name=vd></a>
@@ -123,3 +125,17 @@
 - Một thành phần khác của hệ thống RAID không bắt buộc phải có nhưng đôi khi là hữu dụng, đó là các khay hoán đổi nóng ổ đĩa. Nó cho phép bạn thay các đĩa cứng gặp trục trặc trong khi hệ thống đang hoạt động mà không phải tắt máy (chỉ đơn giản là mở khóa, rút ổ ra và cắm ổ mới vào). Thiết bị này thường sử dụng với ổ cứng SCSI và khá quan trọng đối với các hệ thống máy chủ vốn yêu cầu hoạt động liên tục.
 - Về phần mềm thì khá đơn giản vì hầu hết các hệ điều hành hiện đại đều hỗ trợ RAID rất tốt, đặc biệt là Microsoft Windows. Nếu bạn sử dụng Windows XP thì bổ sung RAID khá dễ dàng. Quan trọng nhất là trình điều khiển nhưng thật tuyệt khi chúng đã được kèm sẵn với thiết bị. Việc cài đặt RAID có thể gây một vài rắc rối nếu bạn thiếu kinh nghiệm nhưng vẫn có hướng giải quyết trong phần sau của bài viết.
 - Có hai trường hợp sẽ xảy ra khi người dung nâng cấp RAID cho hệ thống. Nếu hệ thống RAID bổ sung chỉ được dùng với mục đích lưu trữ hoặc làm nơi trao đổi thông tin tốc độ cao thì việc cài đặt rất đơn giản. Tuy nhiên nếu bạn dự định dùng nó làm nơi cài hệ điều hành, phần mềm thì sẽ rất rắc rối và phải cài đặt lại toàn bộ từ con số 0.
+
+<a name=pb></a>
+## IV. Phân biệt RAID và LVM
+
+**RAID:**
+- RAID được sử dụng cho dự phòng.
+- RAID là một nhóm các thiết bị DISK vật lý được sắp xếp và cấu hình một cách hợp lý để nâng cao hiệu suất hoặc khả năng dự phòng hoặc cả hai cho một hệ thống lưu trữ.
+- RAID là một phần mềm hoặc một kỹ thuật phần cứng tạo ra sự dự phòng cho dữ liệu trên nhiều khối thiết bị dựa trên cấu hình RAID.
+
+**LVM:**
+- LVM là một trong những cách phân vùng ổ đĩa cứng một cách hợp lý .
+- LVM là một phân vùng logic có thể tạo,mở rộng,tách để sử dụng dựa trên các phân vùng Disk vào một hệ điều hành.
+- LVM là một công cụ phần mềm để quản lý một lượng lớn các thiết bị lưu trữ làm cho các thiết bị lưu trữ được tổng hợp dưới dạng một kho lưu trữ có thể quản lý được.
+- LVM là một phương pháp quản lý DISK cho phép chúng ta tạo ra, mở rộng,giảm ,xóa hoặc thay đổi các nhóm logic.
