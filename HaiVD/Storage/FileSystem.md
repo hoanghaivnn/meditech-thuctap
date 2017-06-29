@@ -8,6 +8,7 @@
 ## [3. Khái niệm cơ bản trong Storage](#kncb)
 ### [3.1 MBR](#31)
 ### [3.2 GPT](#32)
+## [4. Tài liệu tham khảo](#tl)
 
 <a name=fwd></a>
 ## 1. File System Windows
@@ -109,3 +110,9 @@ Thông thường, một LBA có kích thước là 512 byte, tuy nhiên kích th
 </ul>
 
 - Các phân vùng sẽ nằm sau LBA33, số lượng phân vùng trên lý thuyết có thể đạt đến vô hạn. Mỗi phân vùng sẽ được gán một GUID (Globally Unique Identifier) để đảm bảo tính duy nhất của các phân vùng.
+
+<a name=tl></a>
+## 4. Tài liệu tham khảo
+- https://www.tienichmaytinh.com/tin-tuc/tim-hieu/742-tim-hieu-ve-dinh-dang-phan-vung-gpt-tren-dia-cung
+- https://www.tienichmaytinh.com/tin-tuc/tim-hieu/741-tim-hieu-ve-mbr-cac-phan-vung-trong-dia-cung-dinh-dang-mbr
+- http://2mit.org/forum/threads/cac-he-thong-file-trong-windows.2167/
