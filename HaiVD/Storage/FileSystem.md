@@ -66,7 +66,7 @@ Journal có 3 chế độ : journal, writeback và odered .
 - Các block group làm tăng sự phân mảnh tệp tin.
 - Supper block chứa thông tin về kích thước các block , số  block , i node trên 1 block group . Nếu không có thông tin về supper block thì đĩa sẽ vô ích, do đó hãy sao lưu supper block để dự phòng.
 - Block bitmap và Inode bitmap được dùng để xác định block nào và các entry inode nào trống để sử dụng.các Data block là nơi lưu trữ nhiều loại tập tin.
-- Inode Table dùng để giữ rãnh ghi của mỗi tập tin : vị trí của nó, kích thước, kiểu và thứ tự truy xuất đêu được lưu trữ trong các inode. Tên tập tin không được cất giữ ở đây, với vùng Inode Table tất cả các tập tin được tham chiếu đến số inode của chúng. 
+- Inode Table dùng để giữ rãnh ghi của mỗi tập tin : vị trí của nó, kích thước, kiểu và thứ tự truy xuất đêu được lưu trữ trong các inode. Tên tập tin không được cất giữ ở đây, với vùng Inode Table tất cả các tập tin được tham chiếu đến số inode của chúng.
 
 - Ext3 về căn bản chỉ là Ext2 đi kèm với journaling. Mục đích chính của Ext3 là tương thích ngược với Ext2, và do vậy những ổ đĩa, phân vùng có thể dễ dàng được chuyển đổi giữa 2 chế độ mà không cần phải format như trước kia.Directory chứa tối đa 32000 subdirectory. Tuy nhiên, vấn đề vẫn còn tồn tại ở đây là những giới hạn của Ext2 vẫn còn nguyên trong Ext3, và ưu điểm của Ext3 là hoạt động nhanh, ổn định hơn rất nhiều. Không thực sự phù hợp để làm file hệ thống dành cho máy chủ bởi vì không hỗ trợ tính năng tạo disk snapshot và file được khôi phục sẽ rất khó để xóa bỏ sau này.
 - Ext4: cũng giống như Ext3, lưu giữ được những ưu điểm và tính tương thích ngược với phiên bản trước đó. Như vậy, chúng ta có thể dễ dàng kết hợp các phân vùng định dạng Ext2, Ext3 và Ext4 trong cùng 1 ổ đĩa trong Ubuntu để tăng hiệu suất hoạt động. Ext4 Hỗ trợ nhiều tính năng mới tăng performance và độ tin cậy (reliability) như multiblock allocation, delayed allocation, journal checksum. fast fsck, etc.Trên thực tế, Ext4 có thể giảm bớt hiện tượng phân mảnh dữ liệu trong ổ cứng, hỗ trợ các file và phân vùng có dung lượng lớn... Thích hợp với ổ SSD so với Ext3, tốc độ hoạt động nhanh hơn so với 2 phiên bản Ext trước đó, cũng khá phù hợp để hoạt động trên server, nhưng lại không bằng Ext3.
@@ -129,3 +129,4 @@ Thông thường, một LBA có kích thước là 512 byte, tuy nhiên kích th
 - https://www.tienichmaytinh.com/tin-tuc/tim-hieu/742-tim-hieu-ve-dinh-dang-phan-vung-gpt-tren-dia-cung
 - https://www.tienichmaytinh.com/tin-tuc/tim-hieu/741-tim-hieu-ve-mbr-cac-phan-vung-trong-dia-cung-dinh-dang-mbr
 - http://2mit.org/forum/threads/cac-he-thong-file-trong-windows.2167/
+- http://doc.edu.vn/tai-lieu/tieu-luan-cau-truc-he-thong-file-ext2-ext3-ext4-trong-ho-linux-7211/
